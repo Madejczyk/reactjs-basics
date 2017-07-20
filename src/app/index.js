@@ -10,12 +10,12 @@ class App extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header />
+                        <Header homeLink={"Panel"} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Dronito"} initialHeight={5}/>
+                        <Home name={"Dronito"} initialHeight={1}/>
                     </div>
                 </div>
             </div>
