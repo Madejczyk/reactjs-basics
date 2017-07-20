@@ -30,6 +30,8 @@ export class Home extends React.Component{
                 <p>Him height: {this.state.height}</p>
                 <hr/>
                 <button onClick={() => this.onFlyHigher()} className="btn btn-primary">Fly higher</button>
+                <hr/>
+                <button onClick={this.props.greet} className="btn btn-primary">Greet</button>
             </div>
         )
     }
@@ -37,5 +39,6 @@ export class Home extends React.Component{
 
 Home.propTypes = {
     name: React.PropTypes.string,
-    age: React.PropTypes.number
+    duration: React.PropTypes.number,
+    greet: React.PropTypes.func
 }
