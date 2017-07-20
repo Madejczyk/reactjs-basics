@@ -1,44 +1,26 @@
 import React from 'react'
 import {render} from 'react-dom'
-import {Header} from './components/Header'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
 import {Home} from './components/Home'
+import {Flight} from "./components/Flight"
 
 class App extends React.Component {
-    constructor(){
-        super()
-        this.state ={
-            homeLink: "Dronito"
-        }
-    }
-
-    onGreet(){
-        alert("Welcome")
-    }
-
-    onChangeLinkName(newName){
-        this.setState({
-            homeLink: newName
-        })
-    }
-
     render(){
         return(
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <Header homeLink={this.state.homeLink} />
-                    </div>
+            <Router>
+                <div>
+                    <ul>
+                        <li><Link to="/home">Home</Link></li>
+                        <li><Link to="/flight">Flight</Link></li>
+                    </ul>
+
+                    <hr/>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/home" component={Home}/>
+                    <Route path="/flight" component={Flight}/>
                 </div>
-                <div className="row">
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Dronito"}
-                              initialHeight={1}
-                              changeLink={this.onChangeLinkName.bind(this)}
-                              initialLinkName={this.state.homeLink}
-                              greet={this.onGreet}/>
-                    </div>
-                </div>
-            </div>
+            </Router>
         )
     }
 }
