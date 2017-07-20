@@ -19,7 +19,9 @@ class App extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Kuba"} user={user} />
+                        <Home name={"Kuba"} user={user} >
+                            <p>Children props</p>
+                        </Home>
                     </div>
                 </div>
             </div>
