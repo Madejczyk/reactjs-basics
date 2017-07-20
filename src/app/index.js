@@ -4,8 +4,21 @@ import {Header} from './components/Header'
 import {Home} from './components/Home'
 
 class App extends React.Component {
+    constructor(){
+        super()
+        this.state ={
+            homeLink: "None"
+        }
+    }
+
     onGreet(){
         alert("Welcome")
+    }
+
+    onChangeLinkName(newName){
+        this.setState({
+            homeLink: newName
+        })
     }
 
     render(){
@@ -13,12 +26,15 @@ class App extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Header homeLink={"Panel"} />
+                        <Header homeLink={this.state.homeLink} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Dronito"} initialHeight={1} greet={this.onGreet}/>
+                        <Home name={"Dronito"}
+                              initialHeight={1}
+                              changeLink={this.onChangeLinkName.bind(this)}
+                              greet={this.onGreet}/>
                     </div>
                 </div>
             </div>

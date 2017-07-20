@@ -5,7 +5,8 @@ export class Home extends React.Component{
         super()
         this.state = {
             height: props.initialHeight,
-            duration: 0
+            duration: 0,
+            homeLink: "Changed link"
         }
         setInterval(() => {
             this.setState({
@@ -20,6 +21,9 @@ export class Home extends React.Component{
         })
     }
 
+    onChangeLink(){
+        this.props.changeLink(this.state.homeLink)
+    }
     render(){
 
         return (
@@ -32,6 +36,8 @@ export class Home extends React.Component{
                 <button onClick={() => this.onFlyHigher()} className="btn btn-primary">Fly higher</button>
                 <hr/>
                 <button onClick={this.props.greet} className="btn btn-primary">Greet</button>
+                <hr />
+                <button onClick={() => this.onChangeLink()} className="btn btn-primary">Change header link</button>
             </div>
         )
     }
