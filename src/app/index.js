@@ -5,10 +5,6 @@ import {Home} from './components/Home'
 
 class App extends React.Component {
     render(){
-        let user = {
-            name: "Maciek",
-            hobbies: ["Sports"]
-        }
 
         return(
             <div className="container">
@@ -19,9 +15,7 @@ class App extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-xs-10 col-xs-offset-1">
-                        <Home name={"Kuba"} user={user} >
-                            <p>Children props</p>
-                        </Home>
+                        <Home name={"Dronito"} initialHeight={5}/>
                     </div>
                 </div>
             </div>
